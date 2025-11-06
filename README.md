@@ -33,7 +33,7 @@ Server starts at:
 
 ---
 
-## 🧠 Example API Call
+## 🧠 Example API Call(cURL)
 
 ```bash
 curl -X POST http://localhost:3000/v1/agent/scene \
