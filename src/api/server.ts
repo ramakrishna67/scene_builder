@@ -5,7 +5,7 @@ import { generateSceneFromPrompt } from "../providers/gemini"; // ✅ import you
 
 dotenv.config();
 
-// ✅ Initialize Fastify with pretty logger
+// Initialize Fastify with pretty logger
 const app = Fastify({
   logger: {
     level: "info",
@@ -19,7 +19,7 @@ const app = Fastify({
   },
 });
 
-// ✅ Zod schema for validating requests
+// Zod schema for validating requests
 const RequestSchema = z.object({
   prompt: z.string().min(3, "Prompt must be at least 3 characters long"),
   constraints: z.object({
@@ -33,15 +33,15 @@ const RequestSchema = z.object({
 
 type RequestInput = z.infer<typeof RequestSchema>;
 
-// ✅ Root route (useful for testing)
+// Root route (useful for testing)
 app.get("/", async (_, reply) => {
   return reply.send({
     message:
-      "👋 Scene Builder Agent is running. Use POST /v1/agent/scene to generate scenes.",
+      " Scene Builder Agent is running. Use POST /v1/agent/scene to generate scenes.",
   });
 });
 
-// ✅ Main route: /v1/agent/scene
+// Main route: /v1/agent/scene
 app.post("/v1/agent/scene", async (req, reply) => {
   try {
     // Validate input
@@ -71,12 +71,12 @@ app.post("/v1/agent/scene", async (req, reply) => {
   }
 });
 
-// ✅ Start server
+//  Start server
 const start = async () => {
   try {
     const port = Number(process.env.PORT) || 3000;
     await app.listen({ port, host: "0.0.0.0" });
-    console.log(`🚀 Scene Builder Agent running at http://localhost:${port}`);
+    console.log(`Scene Builder Agent running at http://localhost:${port}`);
   } catch (err) {
     app.log.error(err);
     process.exit(1);

@@ -19,7 +19,7 @@ export async function buildScene(
 
     return validated;
   } catch (err: any) {
-    console.error("❌ buildScene error:", err.message);
+    console.error(" buildScene error:", err.message);
     throw new Error(
       `Scene generation failed: ${err.message || "Unknown error"}`
     );

@@ -5,13 +5,9 @@ dotenv.config();
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
 if (!GEMINI_API_KEY) {
-  throw new Error("❌ Missing GEMINI_API_KEY in .env file");
+  throw new Error(" Missing GEMINI_API_KEY in .env file");
 }
 
-/**
- * Generate structured scene JSON from a natural-language prompt.
- * Works with AI Studio or Google Cloud Gemini keys.
- */
 export async function generateSceneFromPrompt(
   userPrompt: string,
   constraints: {
@@ -22,7 +18,6 @@ export async function generateSceneFromPrompt(
     deterministic?: boolean;
   }
 ) {
-  // 👉 Use the working Gemini v1 model endpoint
   const url =
     "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent";
 
@@ -92,7 +87,7 @@ ${JSON.stringify(exampleStructure, null, 2)}
 `;
 
   try {
-    // ✅ Call the Gemini v1 REST API
+    //  Call the Gemini v1 REST API
     const response = await axios.post(
       url,
       {
@@ -115,7 +110,7 @@ ${JSON.stringify(exampleStructure, null, 2)}
       }
     );
 
-    // ✅ Extract text safely
+    // Extract text safely
     const text =
       response.data?.candidates?.[0]?.content?.parts?.[0]?.text?.trim() ?? "";
 
@@ -134,12 +129,12 @@ ${JSON.stringify(exampleStructure, null, 2)}
       const parsed = JSON.parse(cleanedText);
       return parsed;
     } catch {
-      console.warn("⚠️ Gemini returned non-strict JSON, returning raw text.");
+      console.warn(" Gemini returned non-strict JSON, returning raw text.");
       return { raw: cleanedText };
     }
   } catch (error: any) {
     const detail = error.response?.data || error.message;
-    console.error("❌ Gemini API Error:", detail);
+    console.error("Gemini API Error:", detail);
     throw new Error(
       `[Gemini Error]: ${
         detail.error?.message || JSON.stringify(detail, null, 2)

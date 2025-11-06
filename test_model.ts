@@ -7,7 +7,6 @@ async function testGemini() {
   try {
     const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!);
 
-    // ✅ Use a known model ID directly
     const model = genAI.getGenerativeModel({
       model: "gemini-1.5-flash-latest",
     });
@@ -22,10 +21,10 @@ async function testGemini() {
       generationConfig: { responseMimeType: "application/json" },
     });
 
-    console.log("✅ Gemini responded with:");
+    console.log(" Gemini responded with:");
     console.log(result.response.text());
   } catch (error: any) {
-    console.error("❌ Gemini API error:", error.message);
+    console.error(" Gemini API error:", error.message);
   }
 }
 
