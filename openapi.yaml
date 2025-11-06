@@ -1,0 +1,55 @@
+openapi: 3.1.0
+info:
+  title: Scene Builder Agent API
+  version: 1.0.0
+  description: API for generating structured Scene JSON from natural-language prompts using Gemini.
+
+servers:
+  - url: http://localhost:3000
+    description: Local development server
+
+paths:
+  /v1/agent/scene:
+    post:
+      summary: Generate scene JSON from a natural-language prompt
+      description: Uses Gemini 2.5 Flash to convert a natural-language prompt into structured Scene JSON.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - prompt
+                - constraints
+              properties:
+                prompt:
+                  type: string
+                  example: "Create a 10s motivational intro with sunrise and quote 'Rise & Win'"
+                constraints:
+                  type: object
+                  properties:
+                    totalDurationSec:
+                      type: integer
+                      example: 10
+                    aspectRatio:
+                      type: string
+                      example: "16:9"
+                    fps:
+                      type: integer
+                      example: 30
+      responses:
+        "200":
+          description: Successful response with scene JSON
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  scene:
+                    type: object
+                    description: Generated Scene JSON structure
+        "422":
+          description: Invalid input data
+        "500":
+          description: Server or Gemini API error

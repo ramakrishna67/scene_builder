@@ -1,0 +1,225 @@
+{
+  "scene": {
+    "scenes": [
+      {
+        "id": "scene-1",
+        "title": "City Life Exploration",
+        "durationSec": 3.5,
+        "rows": [
+          {
+            "id": "row-1-video",
+            "kind": "video",
+            "actions": [
+              {
+                "id": "action-1-video",
+                "type": "video",
+                "startSec": 0,
+                "durationSec": 3.5,
+                "props": {
+                  "src": "placeholder: bustling city street with diverse people",
+                  "license": {
+                    "source": "pexels",
+                    "license": "free"
+                  }
+                },
+                "effects": [
+                  {
+                    "name": "zoomIn",
+                    "props": {
+                      "startScale": 1,
+                      "endScale": 1.05,
+                      "durationSec": 3.5
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "row-1-text",
+            "kind": "text",
+            "actions": [
+              {
+                "id": "action-1-text",
+                "type": "text",
+                "startSec": 0.5,
+                "durationSec": 2.5,
+                "props": {
+                  "text": "Vibrant Cityscapes",
+                  "fontSize": 48,
+                  "color": "#FFFFFF",
+                  "position": {
+                    "x": "center",
+                    "y": "bottom"
+                  }
+                },
+                "effects": [
+                  {
+                    "name": "fadeIn",
+                    "props": {
+                      "durationSec": 0.5
+                    }
+                  },
+                  {
+                    "name": "fadeOut",
+                    "props": {
+                      "durationSec": 0.5
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "scene-2",
+        "title": "Nature's Serenity",
+        "durationSec": 3,
+        "rows": [
+          {
+            "id": "row-2-video",
+            "kind": "video",
+            "actions": [
+              {
+                "id": "action-2-video",
+                "type": "video",
+                "startSec": 0,
+                "durationSec": 3,
+                "props": {
+                  "src": "placeholder: serene mountain lake at sunrise/sunset",
+                  "license": {
+                    "source": "pixabay",
+                    "license": "free"
+                  }
+                },
+                "effects": [
+                  {
+                    "name": "panRight",
+                    "props": {
+                      "distance": 0.1,
+                      "durationSec": 3
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "row-2-text",
+            "kind": "text",
+            "actions": [
+              {
+                "id": "action-2-text",
+                "type": "text",
+                "startSec": 0.2,
+                "durationSec": 2.6,
+                "props": {
+                  "text": "Peaceful Escapes",
+                  "fontSize": 48,
+                  "color": "#FFFFFF",
+                  "position": {
+                    "x": "center",
+                    "y": "top"
+                  }
+                },
+                "effects": [
+                  {
+                    "name": "fadeIn",
+                    "props": {
+                      "durationSec": 0.3
+                    }
+                  },
+                  {
+                    "name": "fadeOut",
+                    "props": {
+                      "durationSec": 0.3
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "scene-3",
+        "title": "Historical Wonders",
+        "durationSec": 3.5,
+        "rows": [
+          {
+            "id": "row-3-video",
+            "kind": "video",
+            "actions": [
+              {
+                "id": "action-3-video",
+                "type": "video",
+                "startSec": 0,
+                "durationSec": 3.5,
+                "props": {
+                  "src": "placeholder: ancient ruins or historical monument",
+                  "license": {
+                    "source": "unsplash",
+                    "license": "free"
+                  }
+                },
+                "effects": [
+                  {
+                    "name": "colorSaturation",
+                    "props": {
+                      "startValue": 0.8,
+                      "endValue": 1.1,
+                      "durationSec": 3.5
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "row-3-text",
+            "kind": "text",
+            "actions": [
+              {
+                "id": "action-3-text",
+                "type": "text",
+                "startSec": 0.7,
+                "durationSec": 2.1,
+                "props": {
+                  "text": "Timeless Journeys",
+                  "fontSize": 48,
+                  "color": "#FFFFFF",
+                  "position": {
+                    "x": "center",
+                    "y": "center"
+                  }
+                },
+                "effects": [
+                  {
+                    "name": "fadeIn",
+                    "props": {
+                      "durationSec": 0.4
+                    }
+                  },
+                  {
+                    "name": "fadeOut",
+                    "props": {
+                      "durationSec": 0.4
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "meta": {
+      "aspectRatio": "16:9",
+      "fps": 30,
+      "totalDurationSec": 10,
+      "generator": "scene-builder-agent",
+      "version": "1.0.0"
+    }
+  }
+}
