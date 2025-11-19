@@ -1,7 +1,7 @@
 import Fastify from "fastify";
 import dotenv from "dotenv";
 import { z } from "zod";
-import { generateSceneFromPrompt } from "../providers/gemini"; // ✅ import your rewritten gemini.ts
+import { generateSceneFromPrompt } from "../providers/gemini";
 
 dotenv.config();
 
